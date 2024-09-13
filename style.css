@@ -1,0 +1,13 @@
+body {
+    background-color: #1f2b5f;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 30vh;
+    justify-content: space-between;
+    align-items: center;
+}
