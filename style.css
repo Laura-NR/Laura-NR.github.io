@@ -1,5 +1,5 @@
 body {
-    background-color: #1f2b5f;
+    background-color: #192454;
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +7,34 @@ body {
 }
 
 header {
-    height: 30vh;
+    height: 40vh;
     justify-content: space-between;
     align-items: center;
+}
+
+header #logo {
+    width: 20%;
+    justify-content: center;
+}
+
+header nav {
+    width: 50%;
+    justify-content: space-around;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 0 1rem;
 }
