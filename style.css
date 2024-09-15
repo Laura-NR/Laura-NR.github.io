@@ -14,7 +14,9 @@ header {
 
 header #logo {
     width: 20%;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 header nav {
