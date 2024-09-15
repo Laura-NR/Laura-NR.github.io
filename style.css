@@ -1,26 +1,29 @@
 body {
-    background-color: #192454;
+    background-color: #101736;
     color: white;
     font-family: Arial, sans-serif;
+    font-size: 1rem;
     margin: 0;
     padding: 0;
 }
 
 header {
-    height: 40vh;
+    height: 10vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
 header #logo {
     width: 20%;
-    display: flex;
-    flex-direction: row;
     justify-content: space-around;
 }
 
 header nav {
-    width: 50%;
+    width: 40%;
     justify-content: space-around;
 }
 
@@ -34,9 +37,45 @@ header ul {
     margin: 0;
 }
 
-header a {
+a {
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
     margin: 0 1rem;
+}
+
+header li:hover, header li:active, header li:focus { 
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+#about_me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#job_title {
+    font-size: 4.5rem;
+    margin: 1rem 0;
+}
+
+#description {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+#social_media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    width: 30%;
+    margin: 1rem 0;
 }
