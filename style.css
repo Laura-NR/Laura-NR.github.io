@@ -1,52 +1,110 @@
-body {
-    background-color: #101736;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-header {
-    height: 10vh;
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header #logo {
-    width: 20%;
-    justify-content: space-around;
-}
-
-header nav {
-    width: 40%;
-    justify-content: space-around;
+body {
+    min-height: 100vh;
+    background-color: #101736;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
 }
 
 header ul {
+    width: 100%;
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     padding: 0;
     margin: 0;
 }
 
-a {
+header li {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+header a {
+    height: 100%;
+    padding: 0 30px;
     color: white;
     text-decoration: none;
-    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+header nav li:first-child {
+    margin-right: auto;
 }
 
 header li:hover, header li:active, header li:focus { 
     border-bottom: 1px solid white;
-    padding-bottom: 0.5rem;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s ease;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(16, 23, 54, 0.1);
+    box-shadow: -5px 0 5px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+    padding: 1rem;
+}
+
+.sidebar a {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media screen and (max-width: 1300px) {
+    header {
+        width: 90%;
+        margin: auto;
+    }
+
+    header li, header a {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
 }
 
 #about_me {
