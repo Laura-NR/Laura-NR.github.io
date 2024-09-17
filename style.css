@@ -7,7 +7,7 @@
 body {
     min-height: 100vh;
     background: rgb(16, 23, 54);
-    background: linear-gradient(45deg, rgba(16, 23, 54, 1) 0%, rgb(0, 0, 0) 100%);
+    background: linear-gradient(45deg, rgba(16, 23, 54, 1) 0%, rgb(4, 4, 4) 100%);
     color: white;
     font-family: 'kind_sansthin', sans-serif;
     font-size: 1rem;
