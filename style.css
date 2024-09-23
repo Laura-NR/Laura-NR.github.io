@@ -338,6 +338,16 @@ section {
     #social_media {
         width: 30%;
     }
+    #skills {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .skill_block {
+        width: 70%;
+        height: 70vh;
+        border-radius: 35vh;
+        margin-bottom: 35px;
+    }
     #get_in_touch {
         font-size: 2.5rem;
     }
