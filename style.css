@@ -13,6 +13,27 @@ body {
     font-size: 1rem;
 }
 
+.scene i {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: animate linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
 header ul {
     width: 90%;
     height: 70px;
@@ -45,7 +66,7 @@ header nav li:first-child {
     margin-right: auto;
 }
 
-header nav #logo {
+.logo {
     font-family: 'loyal_sansregularv1', sans-serif;
     font-size: 2rem;
     font-weight: bold;
@@ -119,7 +140,7 @@ header li:not(:first-child):focus {
     }
 }
 
-#about_me {
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,6 +152,7 @@ header li:not(:first-child):focus {
 
 #job_title {
     font-family: 'loyal_sansregularv1', sans-serif;
+    text-align: center;
     font-size: 4.8rem;
     margin: 1rem 0;
 }
@@ -149,5 +171,192 @@ header li:not(:first-child):focus {
     align-items: center;
     list-style-type: none;
     width: 15%;
+    margin: auto;
+}
+
+#skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.skill_block {
+    background-color: #fff;
+    opacity: 0.6;
+    width: 25%;
+    height: 75vh;
+    border-radius: 37.5vh;
+}
+
+@media screen and (max-width: 1000px) {
+    #skills {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .skill_block {
+        width: 40%;
+        height: 70vh;
+        border-radius: 35vh;
+    }
+    
+}
+
+@media screen and (max-width: 750px) {
+    #skills {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .skill_block {
+        width: 45%;
+        height: 70vh;
+        border-radius: 35vh;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    #skills {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .skill_block {
+        width: 60%;
+        height: 70vh;
+        border-radius: 35vh;
+        margin-bottom: 35px;
+    }
+    
+}
+
+#get_in_touch {
+    font-size: 3.2rem;
+    margin: 1.2rem 0;
+    font-family: 'loyal_sansregularv1', sans-serif;
+}
+
+#contact_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+#contact_form #name {
+    width: 90%;
+    display: flex;
+    gap: 1rem;
+    /* margin: 0.5rem 0; */
+    /* padding: 0.5rem 0; */
+}
+
+#contact_form #mail {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+}
+
+#contact_form input {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+}
+
+#contact_form textarea {
+    width: 90%;
+    height: 40%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+}
+
+#contact_form button {
+    display: flex;
     margin: 1rem 0;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#contact_form button:hover, #contact_form button:active, #contact_form button:focus {
+    background-color: white;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+#contact_form button:hover svg path {
+    fill: black;
+}
+
+
+@media screen and (max-width: 800px) {
+    #job_title {
+        font-size: 3.5rem;
+    }
+    #description {
+        font-size: 1rem;
+    }    
+    #social_media {
+        width: 25%;
+    }
+    #contact_form {
+        width: 90%;
+    }
+    #contact_form #name {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #job_title {
+        font-size: 3.5rem;
+    }
+    #description {
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+    }
+    #social_media {
+        width: 30%;
+    }
+    #get_in_touch {
+        font-size: 2.5rem;
+    }
+    #contact_form {
+        width: 90%;
+    }
+    #contact_form #name {
+        flex-direction: column;
+    }
+}
+
+footer ul {
+    width: 90%;
+    height: 90px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-end; */
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
 }
