@@ -359,6 +359,20 @@ section {
     }
 }
 
+@media screen and (max-width: 400px) {
+    #skills {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .skill_block {
+        width: 80%;
+        height: 70vh;
+        border-radius: 35vh;
+        margin-bottom: 35px;
+    }
+    
+}
+
 footer ul {
     width: 90%;
     height: 90px;
