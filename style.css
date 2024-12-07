@@ -375,6 +375,19 @@ canvas {
   }
 }
 
+/* @media screen and (max-width: 400px) {
+  #skills {
+    display: flex;
+    flex-direction: column;
+  }
+  .skill_block {
+    width: 95%;
+    height: 60vh;
+    margin-bottom: 35px;
+    margin-bottom: 8%;
+  }
+} */
+
 #get_in_touch {
   font-size: 3.2rem;
   margin: 1.2rem 0;
@@ -491,7 +504,7 @@ canvas {
     flex-direction: column;
   }
   .skill_block {
-    width: 70%;
+    width: 95%;
     height: 60vh;
     margin-bottom: 35px;
   }
@@ -503,18 +516,6 @@ canvas {
   }
   #contact_form #name {
     flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  #skills {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  .skill_block {
-    width: 80%;
-    height: 70vh;
-    margin-bottom: 35px;
   }
 }
 
@@ -538,6 +539,10 @@ footer ul {
     align-items: center;
     line-height: 1.8rem;
     height: 150px;
+  }
+
+  footer ul p {
+    text-align: center;
   }
   
 }
