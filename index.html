@@ -19,7 +19,7 @@
       <header>
         <nav id="header_menu">
           <ul class="sidebar">
-            <li onclick="hideSidebar()">
+            <li id="hideSideBarButton">
               <svg
                 width="25px"
                 height="25px"
@@ -33,12 +33,14 @@
                 />
               </svg>
             </li>
-            <li><a href="#about_me">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about_me" data-i18n="navbar.home">About Me</a></li>
+            <li><a href="#skills" data-i18n="navbar.skills">Skills</a></li>
+            <li><a href="#projects" data-i18n="navbar.projects">Projects</a></li>
+            <li><a href="#contact" data-i18n="navbar.contact">Contact</a></li>
             <li>
-              <a href="#">
+              <a href="resources/images/cv.png"
+                download="resources/images/cv.png" 
+                data-i18n="navbar.download_cv">
                 Download CV
                 <svg
                   style="margin-left: 5px"
@@ -55,41 +57,145 @@
                 </svg>
               </a>
             </li>
-            <li>
-              <a href="#">
-                Language
-                <svg
-                  style="margin-left: 6px"
-                  width="18px"
-                  height="18px"
-                  viewBox="0 0 36 36"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  role="img"
-                  class="iconify iconify--twemoji"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <path
-                    fill="#EEE"
-                    d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"
-                  ></path>
-                  <path
-                    fill="#CE1124"
-                    d="M21 5h-6v10H0v6h15v10h6V21h15v-6H21z"
-                  ></path>
-                </svg>
-              </a>
+            <li class="language-dropdown">
+              <!-- Custom Dropdown for Sidebar -->
+              <ul class="dropdown">
+                <li class="dropbtn current-language-sidebar" id="current-language-sidebar" data-lang="en">
+                  English
+                  <svg
+                    style="margin-left: 6px"
+                    width="16px"
+                    height="16px"
+                    viewBox="0 0 36 36"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    class="iconify iconify--twemoji"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <path
+                      fill="#EEE"
+                      d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"
+                    ></path>
+                    <path
+                      fill="#CE1124"
+                      d="M21 5h-6v10H0v6h15v10h6V21h15v-6H21z"
+                    ></path>
+                  </svg>
+                </li>
+                <ul class="dropdown-content" id="language-options-sidebar">
+                  <li data-lang="es" class="dropdown_item">
+                    Español
+                    <svg
+                      style="margin-left: 6px"
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 36 36"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--twemoji"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <path
+                        fill="#C60A1D"
+                        d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z"
+                      ></path>
+                      <path fill="#FFC400" d="M0 12h36v12H0z"></path>
+                      <path
+                        fill="#EA596E"
+                        d="M9 17v3a3 3 0 1 0 6 0v-3H9z"
+                      ></path>
+                      <path fill="#F4A2B2" d="M12 16h3v3h-3z"></path>
+                      <path fill="#DD2E44" d="M9 16h3v3H9z"></path>
+                      <ellipse
+                        fill="#EA596E"
+                        cx="12"
+                        cy="14.5"
+                        rx="3"
+                        ry="1.5"
+                      ></ellipse>
+                      <ellipse
+                        fill="#FFAC33"
+                        cx="12"
+                        cy="13.75"
+                        rx="3"
+                        ry=".75"
+                      ></ellipse>
+                      <path fill="#99AAB5" d="M7 16h1v7H7zm9 0h1v7h-1z"></path>
+                      <path
+                        fill="#66757F"
+                        d="M6 22h3v1H6zm9 0h3v1h-3zm-8-7h1v1H7zm9 0h1v1h-1z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li data-lang="de">
+                    Deutsch
+                    <svg
+                      style="margin-left: 6px"
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 36 36"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--twemoji"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <path
+                        fill="#FFCD05"
+                        d="M0 27a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4v-4H0v4z"
+                      ></path>
+                      <path fill="#ED1F24" d="M0 14h36v9H0z"></path>
+                      <path
+                        fill="#141414"
+                        d="M32 5H4a4 4 0 0 0-4 4v5h36V9a4 4 0 0 0-4-4z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li data-lang="fr">
+                    Français
+                    <svg
+                      style="margin-left: 6px"
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 36 36"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--twemoji"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <path
+                        fill="#ED2939"
+                        d="M36 27a4 4 0 0 1-4 4h-8V5h8a4 4 0 0 1 4 4v18z"
+                      ></path>
+                      <path
+                        fill="#002495"
+                        d="M4 5a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h8V5H4z"
+                      ></path>
+                      <path fill="#EEE" d="M12 5h12v26H12z"></path>
+                    </svg>
+                  </li>
+                </ul>
+              </ul>
             </li>
           </ul>
           <ul>
             <li><h1 id="logo_header" class="logo">Laura Nunez</h1></li>
-            <li class="hideOnMobile"><a href="#about_me">Home</a></li>
-            <li class="hideOnMobile"><a href="#skills">Skills</a></li>
-            <li class="hideOnMobile"><a href="#projects">Projects</a></li>
-            <li class="hideOnMobile"><a href="#contact">Contact</a></li>
-            <li class="hideOnMobile">
-              <a href="#">
+            <li class="hideOnMobile"><a href="#about_me" data-i18n="navbar.home">Home</a></li>
+            <li class="hideOnMobile"><a href="#skills" data-i18n="navbar.skills">Skills</a></li>
+            <li class="hideOnMobile"><a href="#projects" data-i18n="navbar.projects">Projects</a></li>
+            <li class="hideOnMobile"><a href="#contact" data-i18n="navbar.contact">Contact</a></li>
+            <li class="hideOnMobile" data-i18n="navbar.download_cv">
+              <a
+                href="resources/images/cv.png"
+                download="resources/images/cv.png"
+              >
                 Download CV
                 <svg
                   style="margin-left: 5px"
@@ -106,33 +212,134 @@
                 </svg>
               </a>
             </li>
-            <li class="hideOnMobile">
-              <a href="#">
-                Language
-                <svg
-                  style="margin-left: 6px"
-                  width="18px"
-                  height="18px"
-                  viewBox="0 0 36 36"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  role="img"
-                  class="iconify iconify--twemoji"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <path
-                    fill="#EEE"
-                    d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"
-                  ></path>
-                  <path
-                    fill="#CE1124"
-                    d="M21 5h-6v10H0v6h15v10h6V21h15v-6H21z"
-                  ></path>
-                </svg>
-              </a>
+            <li class="hideOnMobile language-dropdown">
+              <!-- Custom Dropdown for Navbar -->
+              <ul class="dropdown">
+                <li class="dropbtn current-language-desktop" id="current-language-desktop" data-lang="en">
+                  English
+                  <svg
+                    style="margin-left: 6px"
+                    width="16px"
+                    height="16px"
+                    viewBox="0 0 36 36"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    class="iconify iconify--twemoji"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <path
+                      fill="#EEE"
+                      d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"
+                    ></path>
+                    <path
+                      fill="#CE1124"
+                      d="M21 5h-6v10H0v6h15v10h6V21h15v-6H21z"
+                    ></path>
+                  </svg>
+                </li>
+                <ul class="dropdown-content" id="language-options-desktop">
+                  <li data-lang="es" class="dropdown_item">
+                    Español
+                    <svg
+                      style="margin-left: 6px"
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 36 36"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--twemoji"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <path
+                        fill="#C60A1D"
+                        d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z"
+                      ></path>
+                      <path fill="#FFC400" d="M0 12h36v12H0z"></path>
+                      <path
+                        fill="#EA596E"
+                        d="M9 17v3a3 3 0 1 0 6 0v-3H9z"
+                      ></path>
+                      <path fill="#F4A2B2" d="M12 16h3v3h-3z"></path>
+                      <path fill="#DD2E44" d="M9 16h3v3H9z"></path>
+                      <ellipse
+                        fill="#EA596E"
+                        cx="12"
+                        cy="14.5"
+                        rx="3"
+                        ry="1.5"
+                      ></ellipse>
+                      <ellipse
+                        fill="#FFAC33"
+                        cx="12"
+                        cy="13.75"
+                        rx="3"
+                        ry=".75"
+                      ></ellipse>
+                      <path fill="#99AAB5" d="M7 16h1v7H7zm9 0h1v7h-1z"></path>
+                      <path
+                        fill="#66757F"
+                        d="M6 22h3v1H6zm9 0h3v1h-3zm-8-7h1v1H7zm9 0h1v1h-1z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li data-lang="de">
+                    Deutsch
+                    <svg
+                      style="margin-left: 6px"
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 36 36"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--twemoji"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <path
+                        fill="#FFCD05"
+                        d="M0 27a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4v-4H0v4z"
+                      ></path>
+                      <path fill="#ED1F24" d="M0 14h36v9H0z"></path>
+                      <path
+                        fill="#141414"
+                        d="M32 5H4a4 4 0 0 0-4 4v5h36V9a4 4 0 0 0-4-4z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li data-lang="fr">
+                    Français
+                    <svg
+                      style="margin-left: 6px"
+                      width="16px"
+                      height="16px"
+                      viewBox="0 0 36 36"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      role="img"
+                      class="iconify iconify--twemoji"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <path
+                        fill="#ED2939"
+                        d="M36 27a4 4 0 0 1-4 4h-8V5h8a4 4 0 0 1 4 4v18z"
+                      ></path>
+                      <path
+                        fill="#002495"
+                        d="M4 5a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h8V5H4z"
+                      ></path>
+                      <path fill="#EEE" d="M12 5h12v26H12z"></path>
+                    </svg>
+                  </li>
+                </ul>
+              </ul>
             </li>
-            <li class="menu-button" onclick="showSidebar()">
+            <li class="menu-button" id="showSideBarButton">
               <a href="#"
                 ><svg
                   width="25px"
@@ -175,8 +382,8 @@
             alt=""
             style="clip-path: url(#arcMask); width: 100%; max-width: 350px"
           />
-          <h1 id="job_title">Full-Stack Web Developer</h1>
-          <p id="description">
+          <h1 id="job_title" data-i18n="sections.job_title">Full-Stack Web Developer</h1>
+          <p id="description" data-i18n="sections.description">
             As a passionate Full Stack Web Developer, I thrive on the excitement
             of bringing ideas to life through code. What drives me is the
             ability to solve complex problems and create seamless user
@@ -249,7 +456,7 @@
           </ul>
         </section>
         <section id="skills">
-          <h1 id="skills_title">My Skills!</h1>
+          <h1 id="skills_title" data-i18n="sections.skills">My Skills!</h1>
           <div id="skill_blocks_container">
             <div id="first_skill_block" class="skill_block">
               <svg
@@ -402,33 +609,35 @@
                 </g>
               </svg>
               <ul>
-                <li>Team Spirit</li>
-                <li>Cummunication</li>
-                <li>Discipline</li>
-                <li>Organization</li>
-                <li>Responsibility</li>
-                <li>Punctuality</li>
+                <li data-i18n="sections.soft_skills.list.0">Team Spirit</li>
+                <li data-i18n="sections.soft_skills.list.1">Cummunication</li>
+                <li data-i18n="sections.soft_skills.list.2">Discipline</li>
+                <li data-i18n="sections.soft_skills.list.3">Organization</li>
+                <li data-i18n="sections.soft_skills.list.4">Responsibility</li>
+                <li data-i18n="sections.soft_skills.list.5">Punctuality</li>
               </ul>
             </div>
           </div>
         </section>
         <section id="projects">
-          <h1 id="projects_title">See my work !</h1>
+          <h1 id="projects_title" data-i18n="sections.projects">See my work !</h1>
         </section>
         <section id="contact">
-          <h1 id="get_in_touch">Get in touch with me</h1>
+          <h1 id="get_in_touch" data-i18n="sections.contact">Get in touch with me</h1>
           <form id="contact_form">
             <div id="name">
               <input
                 type="text"
                 name="firstName"
                 id="firstName"
+                data-i18n="contact_form.first_name"
                 placeholder="First Name"
               />
               <input
                 type="text"
                 name="lastName"
                 id="lastName"
+                data-i18n="contact_form.last_name"
                 placeholder="Last Name"
               />
             </div>
@@ -437,16 +646,18 @@
                 type="text"
                 name="subject"
                 id="subject"
+                data-i18n="contact_form.subject"
                 placeholder="Subject"
               />
-              <input type="email" name="email" id="email" placeholder="Email" />
+              <input type="email" name="email" id="email"  data-i18n="contact_form.email" placeholder="Email" />
             </div>
             <textarea
               name="message"
               id="message"
-              placeholder="Message"
+              data-i18n="contact_form.message"
+              placeholder="Your Message Here..."
             ></textarea>
-            <button type="submit">
+            <button type="submit" data-i18n="contact_form.send">
               Send
               <svg
                 width="20px"
@@ -468,10 +679,45 @@
         <ul>
           <li id="logo_footer" class="logo">Laura Nunez</li>
           <li>
-            <ul>
-              <li></li>
-              <li></li>
-            </ul>
+            <p data-i18n="footer.copyright">© 2024 Laura Nunez. All rights reserved.</p>
+          </li>
+          <li>
+            <a href="#about_me">
+              <svg
+                width="35px"
+                height="35px"
+                viewBox="0 0 32 32"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+              >
+                <title>arrow-up-circle</title>
+                <desc>Created with Sketch Beta.</desc>
+                <defs></defs>
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                  sketch:type="MSPage"
+                >
+                  <g
+                    id="Icon-Set"
+                    sketch:type="MSLayerGroup"
+                    transform="translate(-360.000000, -1087.000000)"
+                    fill="#fff"
+                  >
+                    <path
+                      d="M376,1117 C368.268,1117 362,1110.73 362,1103 C362,1095.27 368.268,1089 376,1089 C383.732,1089 390,1095.27 390,1103 C390,1110.73 383.732,1117 376,1117 L376,1117 Z M376,1087 C367.163,1087 360,1094.16 360,1103 C360,1111.84 367.163,1119 376,1119 C384.837,1119 392,1111.84 392,1103 C392,1094.16 384.837,1087 376,1087 L376,1087 Z M376.879,1096.46 C376.639,1096.22 376.311,1096.15 376,1096.21 C375.689,1096.15 375.361,1096.22 375.121,1096.46 L369.465,1102.12 C369.074,1102.51 369.074,1103.14 369.465,1103.54 C369.854,1103.93 370.488,1103.93 370.879,1103.54 L375,1099.41 L375,1110 C375,1110.55 375.447,1111 376,1111 C376.553,1111 377,1110.55 377,1110 L377,1099.41 L381.121,1103.54 C381.512,1103.93 382.145,1103.93 382.535,1103.54 C382.926,1103.14 382.926,1102.51 382.535,1102.12 L376.879,1096.46 L376.879,1096.46 Z"
+                      id="arrow-up-circle"
+                      sketch:type="MSShapeGroup"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </a>
           </li>
         </ul>
       </footer>
@@ -480,6 +726,6 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"
     ></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
