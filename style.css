@@ -225,8 +225,7 @@ section {
   align-items: center;
   height: 95vh;
   width: 80%;
-  margin: 0 auto;
-  margin-bottom: 1.6rem;
+  margin: 1.4rem auto;
 }
 
 #job_title {
@@ -260,7 +259,7 @@ canvas {
 #skills {
   text-align: center; /* Ensure title is centered */
   padding-top: 2rem; /* Add some space at the top */
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 #skills_title,
@@ -375,22 +374,280 @@ canvas {
   }
 }
 
-/* @media screen and (max-width: 400px) {
-  #skills {
-    display: flex;
+#projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 12rem;
+}
+
+#studio, #ski {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 7rem 0;
+}
+
+.img_container {
+  width: 45%;
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.img_container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project_info {
+  width: 50%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -25px;
+}
+
+.project_info h2 {
+  font-size: 3.5rem;
+  font-family: "loyal_sansregularv1", sans-serif;
+  margin: 1rem 0;
+}
+
+#studio .project_info ul {
+  width: 25%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#ski .project_info ul {
+  width: 55%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project_info ul li {
+  font-size: 1.2rem;
+  font-family: "loyal_sansregularv1", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 3px 20px;
+}
+
+.project_info p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  text-align: justify;
+}
+
+.project_info a {
+  display: flex;
+  margin: 1rem 0;
+  padding: 0.5rem 1.2rem;
+  font-weight: 700;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.project_info a:hover, .project_info ul li:hover {
+  background-color: white;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1500px) {
+  #studio, #ski {
     flex-direction: column;
   }
-  .skill_block {
-    width: 95%;
-    height: 60vh;
-    margin-bottom: 35px;
-    margin-bottom: 8%;
+
+  .img_container {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 25px;
   }
-} */
+
+  .project_info {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  /* Reorder the elements */
+  #ski .img_container {
+    order: 1; /* Move the image container above the text for #ski */
+  }
+
+  #ski .project_info {
+    order: 2; /* Keep the project info below the image */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #projects {
+    margin-top: 55rem;
+  }
+
+  .img_container {
+    height: 400px;
+  }
+
+  #studio .img_container {
+    margin-top: -100px;
+  }
+
+  .project_info {
+    height: 400px;
+  }
+
+  .project_info h2 {
+    font-size: 2.5rem;
+  }
+
+  .project_info ul {
+    width: 40%;
+  }
+
+  .project_info p {
+    font-size: 1rem;
+  }
+
+  .project_info a {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #projects {
+    margin-top: 90rem;
+  }
+
+  .img_container {
+    margin-top: -2rem;
+  }
+
+  #studio .img_container {
+    margin-top: -100px;
+  }
+
+  .project_info {
+    margin-bottom: 55px;
+  }
+
+  .project_info h2 {
+    font-size: 3rem;
+  }
+
+  .project_info ul li {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #projects {
+    margin-top: 75rem;
+  }
+
+  .img_container {
+    height: 300px;
+  }
+
+  #studio .img_container {
+    margin-top: -100px;
+  }
+
+  .project_info {
+    height: 300px;
+  }
+
+  .project_info h2 {
+    font-size: 2rem;
+  }
+
+  .project_info ul {
+    width: 30%;
+  }
+
+  .project_info p {
+    font-size: 0.8rem;
+  }
+
+  .project_info a {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #projects {
+    margin-top: 70rem;
+  }
+
+  .img_container {
+    height: 250px;
+  }
+
+  #studio .img_container {
+    margin-top: -100px;
+  }
+
+  .project_info {
+    height: 250px;
+    margin-bottom: 200px;
+  }
+
+  .project_info h2 {
+    font-size: 1.5rem;
+  }
+
+  .project_info ul {
+    margin-left: -50px;
+  }
+
+  #ski .project_info ul {
+    margin-left: -100px;
+  }
+
+  .project_info ul li {
+    font-size: 12px;
+  }
+
+  .project_info p {
+    font-size: 0.8rem;
+  }
+
+  .project_info a {
+    font-size: 0.8rem;
+  }
+  
+}
 
 #get_in_touch {
   font-size: 3.2rem;
-  margin: 1.2rem 0;
+  margin-top: 8rem;
   font-family: "loyal_sansregularv1", sans-serif;
 }
 

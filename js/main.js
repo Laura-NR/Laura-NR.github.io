@@ -24,7 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Function to display stars in the background
 function stars() {
-  let count = 600;
+  // Set number of stars based on screen width
+  let count;
+  let screenWidth = window.innerWidth;
+  
+  // For mobile (small screens), set count to around 200, for desktop leave it at 600
+  if (screenWidth <= 768) { // Adjust this value based on the width threshold for mobile
+    count = 200;  // Or any number suitable for mobile
+  } else {
+    count = 600;  // For larger screens (desktop)
+  }
+
   let scene = document.querySelector(".scene");
   let i = 0;
 
@@ -253,14 +263,14 @@ document.addEventListener("DOMContentLoaded", () => {
     setLanguage(savedLanguage);
 
     // Optionally, update the language in the navbar and sidebar based on the saved language
-    /* const savedLangText = document.querySelector(`.dropdown li[data-lang="${savedLanguage}"]`).textContent;
+    const savedLangText = document.querySelector(`.dropdown li[data-lang="${savedLanguage}"]`).textContent;
     const savedLangSVG = languageData[savedLanguage].flagSVG;
     
     const navbarLangElement = document.querySelector(".current-language-desktop");
     const sidebarLangElement = document.querySelector(".current-language-sidebar");
 
     swapLanguageAndFlag(navbarLangElement, savedLangText, savedLangSVG);
-    swapLanguageAndFlag(sidebarLangElement, savedLangText, savedLangSVG); */
+    swapLanguageAndFlag(sidebarLangElement, savedLangText, savedLangSVG);
   } else {
     // If no language is saved, set to default language (e.g., 'en')
     setLanguage('en');

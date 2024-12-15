@@ -33,7 +33,7 @@
                 />
               </svg>
             </li>
-            <li><a href="#about_me" data-i18n="navbar.home">About Me</a></li>
+            <li><a href="#about_me" data-i18n="navbar.home">Home</a></li>
             <li><a href="#skills" data-i18n="navbar.skills">Skills</a></li>
             <li><a href="#projects" data-i18n="navbar.projects">Projects</a></li>
             <li><a href="#contact" data-i18n="navbar.contact">Contact</a></li>
@@ -191,10 +191,11 @@
             <li class="hideOnMobile"><a href="#skills" data-i18n="navbar.skills">Skills</a></li>
             <li class="hideOnMobile"><a href="#projects" data-i18n="navbar.projects">Projects</a></li>
             <li class="hideOnMobile"><a href="#contact" data-i18n="navbar.contact">Contact</a></li>
-            <li class="hideOnMobile" data-i18n="navbar.download_cv">
+            <li class="hideOnMobile">
               <a
                 href="resources/images/cv.png"
                 download="resources/images/cv.png"
+                data-i18n="navbar.download_cv"
               >
                 Download CV
                 <svg
@@ -479,7 +480,7 @@
                 <li>JavaScript</li>
                 <li>ReactJS</li>
                 <li>VueJS</li>
-                <li></li>
+                <li>Angular</li>
               </ul>
             </div>
             <div id="second_skill_block" class="skill_block">
@@ -522,6 +523,7 @@
                 <li>PostgreSQL</li>
                 <li>MySQL</li>
                 <li>NoSQL</li>
+                <li>Docker</li>
               </ul>
             </div>
             <div id="third_skill_block" class="skill_block">
@@ -620,7 +622,41 @@
           </div>
         </section>
         <section id="projects">
-          <h1 id="projects_title" data-i18n="sections.projects">See my work !</h1>
+          <h1 id="projects_title" data-i18n="sections.projects_title">See my work !</h1>
+          <div id="studio">
+            <div class="img_container">
+              <img src="resources/images/studio.png" alt="Photography Portfolio">
+            </div>
+            <div class="project_info">
+              <h2 data-i18n="sections.projects.studio.title">Photography Portfolio</h2>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+              <p data-i18n="sections.projects.studio.description">
+                A photography portfolio website designed to showcase the work of a photographer with elegance and simplicity. The clean and sleek design ensures that the images remain the central focus, free from unnecessary distractions, allowing visitors to fully appreciate the artistry behind each shot. Built using HTML, CSS, and JavaScript, the website not only demonstrates technical proficiency but also emphasizes best practices in web development. Through this project, I honed my skills in these technologies while gaining valuable experience in optimizing images for web use, ensuring fast loading times without compromising quality. This project also deepened my understanding of responsive design and accessibility, creating a seamless viewing experience across devices.
+              </p>
+              <a href="" target="_blank" rel="noopener noreferrer" data-i18n="sections.projects.studio.link">Visit the Site</a>
+            </div>
+          </div>
+          <div id="ski">
+            <div class="project_info" class="ski_item">
+              <h2 data-i18n="sections.projects.studio.title">Ski Station Web Site</h2>
+              <ul class="ski_item">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+              </ul>
+              <p data-i18n="sections.projects.studio.description">
+                A ski station website designed to provide essential information with a clean and intuitive design, ensuring users can quickly find what they need without distractions. The simple yet effective layout keeps the focus on delivering a seamless experience for visitors, whether they’re browsing for information or searching for specific details. Developed using HTML, CSS, PHP, and JavaScript, the site features a dynamic search bar and filtering functionality, enabling users to effortlessly locate ski trails, services, or facilities. This project allowed me to enhance my skills in front-end and back-end development while learning how to integrate interactive features that improve usability. Additionally, it reinforced my understanding of creating responsive and user-friendly web applications.
+              </p>
+              <a href="" target="_blank" rel="noopener noreferrer" data-i18n="sections.projects.studio.link">Visit the Site</a>
+            </div>
+            <div class="img_container ski_item">
+              <img src="resources/images/ski.png" alt="Photography Portfolio">
+            </div>
+          </div> 
         </section>
         <section id="contact">
           <h1 id="get_in_touch" data-i18n="sections.contact">Get in touch with me</h1>
