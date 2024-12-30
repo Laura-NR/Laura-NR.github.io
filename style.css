@@ -602,6 +602,10 @@ canvas {
 }
 
 @media screen and (max-width: 400px) {
+  .skill_block {
+    padding-bottom: 100px;
+  }
+
   #projects {
     margin-top: 70rem;
   }
