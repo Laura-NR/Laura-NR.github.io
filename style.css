@@ -120,34 +120,6 @@ header li:not(:first-child):focus {
   display: none;
 }
 
-@media screen and (max-width: 1300px) {
-  header {
-    width: 90%;
-    margin: auto;
-  }
-
-  header li,
-  header a {
-    padding: 0 10px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .hideOnMobile {
-    display: none;
-  }
-
-  .menu-button {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .sidebar {
-    width: 100%;
-  }
-}
-
 /* Dropdown Container */
 .dropdown {
   position: relative;
@@ -225,8 +197,12 @@ section {
   align-items: center;
   height: 95vh;
   width: 80%;
-  margin: 1.4rem auto;
+  margin: 4rem auto;
 }
+
+/* #about_me {
+  margin-top: 4rem;
+} */
 
 #job_title {
   font-family: "loyal_sansregularv1", sans-serif;
@@ -259,7 +235,15 @@ canvas {
 #skills {
   text-align: center; /* Ensure title is centered */
   padding-top: 2rem; /* Add some space at the top */
-  /* margin-bottom: 1rem; */
+  margin-bottom: 1rem;
+  margin-top: 8rem;
+}
+
+.skill-img {
+  width: 50px;
+  height: 50px;
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 #skills_title,
@@ -275,7 +259,7 @@ canvas {
   align-items: center;
   flex-wrap: nowrap;
   height: auto; /* Allow the container to grow based on content */
-  min-height: 70vh; /* Optional: Add a minimum height if needed */
+  /* min-height: 80vh; Optional: Add a minimum height if needed */
   width: 100%; /* Ensure it stretches full width */
 }
 
@@ -295,7 +279,6 @@ canvas {
   line-height: 3rem;
   border-radius: 30px;
   border: 1px solid #fff;
-  /* box-shadow: 3px 3px 18px rgb(255, 255, 255), -3px -3px 18px rgb(255, 255, 255); */
   position: relative;
 }
 
@@ -307,71 +290,16 @@ canvas {
   transition: 0.2s ease-in-out;
 }
 
-.skill_block svg {
-  margin-top: 1.5rem;
-  margin-bottom: 4rem;
-}
-
 .skill_block ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   list-style: none;
   font-family: "loyal_sansregularv1", sans-serif;
   font-size: 2rem;
   line-height: 2.8rem;
-}
-
-@media screen and (max-width: 1200px) {
-  #skills {
-    display: flex;
-    flex-direction: column;
-  }
-  #skill_blocks_container {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  .skill_block {
-    width: 40%;
-    height: 70vh;
-    padding: 1rem 0;
-    margin-bottom: 8%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  #skills {
-    display: flex;
-    flex-direction: column;
-  }
-  .skill_block {
-    width: 47%;
-    height: 70vh;
-    padding: 1rem 0;
-    margin-bottom: 8%;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  #skills {
-    display: flex;
-    flex-direction: column;
-  }
-  .skill_block {
-    width: 65%;
-    height: 70vh;
-    margin-bottom: 8%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #skills {
-    display: flex;
-    flex-direction: column;
-  }
-  .skill_block {
-    width: 75%;
-    height: 60vh;
-    margin-bottom: 35px;
-    margin-bottom: 8%;
-  }
+  margin-bottom: 2.5rem;
 }
 
 #projects {
@@ -481,177 +409,9 @@ canvas {
   transition: 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 1500px) {
-  #studio, #ski {
-    flex-direction: column;
-  }
-
-  .img_container {
-    width: 100%;
-    height: 500px;
-    margin-bottom: 25px;
-  }
-
-  .project_info {
-    width: 100%;
-    margin-top: 2rem;
-  }
-
-  /* Reorder the elements */
-  #ski .img_container {
-    order: 1; /* Move the image container above the text for #ski */
-  }
-
-  #ski .project_info {
-    order: 2; /* Keep the project info below the image */
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  #projects {
-    margin-top: 55rem;
-  }
-
-  .img_container {
-    height: 400px;
-  }
-
-  #studio .img_container {
-    margin-top: -100px;
-  }
-
-  .project_info {
-    height: 400px;
-  }
-
-  .project_info h2 {
-    font-size: 2.5rem;
-  }
-
-  .project_info ul {
-    width: 40%;
-  }
-
-  .project_info p {
-    font-size: 1rem;
-  }
-
-  .project_info a {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  #projects {
-    margin-top: 90rem;
-  }
-
-  .img_container {
-    margin-top: -2rem;
-  }
-
-  #studio .img_container {
-    margin-top: -100px;
-  }
-
-  .project_info {
-    margin-bottom: 55px;
-  }
-
-  .project_info h2 {
-    font-size: 3rem;
-  }
-
-  .project_info ul li {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #projects {
-    margin-top: 75rem;
-  }
-
-  .img_container {
-    height: 300px;
-  }
-
-  #studio .img_container {
-    margin-top: -100px;
-  }
-
-  .project_info {
-    height: 300px;
-  }
-
-  .project_info h2 {
-    font-size: 2rem;
-  }
-
-  .project_info ul {
-    width: 30%;
-  }
-
-  .project_info p {
-    font-size: 0.8rem;
-  }
-
-  .project_info a {
-    font-size: 0.8rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .skill_block {
-    padding-bottom: 100px;
-  }
-
-  #projects {
-    margin-top: 70rem;
-  }
-
-  .img_container {
-    height: 250px;
-  }
-
-  #studio .img_container {
-    margin-top: -100px;
-  }
-
-  .project_info {
-    height: 250px;
-    margin-bottom: 200px;
-  }
-
-  .project_info h2 {
-    font-size: 1.5rem;
-  }
-
-  .project_info ul {
-    margin-left: -50px;
-  }
-
-  #ski .project_info ul {
-    margin-left: -100px;
-  }
-
-  .project_info ul li {
-    font-size: 12px;
-  }
-
-  .project_info p {
-    font-size: 0.8rem;
-  }
-
-  .project_info a {
-    font-size: 0.8rem;
-  }
-  
-}
-
 #get_in_touch {
   font-size: 3.2rem;
-  margin-top: 8rem;
+  margin-top: 4rem;
   font-family: "loyal_sansregularv1", sans-serif;
 }
 
@@ -731,58 +491,6 @@ canvas {
   fill: black;
 }
 
-@media screen and (max-width: 800px) {
-  #job_title, #get_in_touch, #projects_title, #skills_title {
-    font-size: 3.5rem;
-  }
-  #description {
-    font-size: 1rem;
-  }
-  #social_media {
-    width: 25%;
-  }
-  #contact_form {
-    width: 90%;
-  }
-  #contact_form #name {
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  section {
-    margin-top: 3rem;
-  }
-  #job_title, #projects_title, #skills_title {
-    font-size: 2.5rem;
-  }
-  #description {
-    font-size: 0.8rem;
-    line-height: 1.5rem;
-  }
-  #social_media {
-    width: 30%;
-  }
-  #skills {
-    display: flex;
-    flex-direction: column;
-  }
-  .skill_block {
-    width: 95%;
-    height: 60vh;
-    margin-bottom: 35px;
-  }
-  #get_in_touch {
-    font-size: 2rem;
-  }
-  #contact_form {
-    width: 90%;
-  }
-  #contact_form #name {
-    flex-direction: column;
-  }
-}
-
 footer ul {
   width: 90%;
   height: 90px;
@@ -796,7 +504,141 @@ footer ul {
   border-top: 1.5px solid white;
 }
 
+/**
+  * Media Queries for Responsive CSS
+  */
+
+@media screen and (max-width: 1500px) {
+  #studio, #ski {
+    flex-direction: column;
+  }
+
+  .img_container {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 25px;
+  }
+
+  .project_info {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  /* Reorder the elements */
+  #ski .img_container {
+    order: 1; /* Move the image container above the text for #ski */
+  }
+
+  #ski .project_info {
+    order: 2; /* Keep the project info below the image */
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  header {
+    width: 90%;
+    margin: auto;
+  }
+
+  header li,
+  header a {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #about_me {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+    margin-bottom: 25rem;
+  }
+
+  #skills {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25rem;
+  }
+
+  #skill_blocks_container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .skill_block {
+    width: 40%;
+    height: auto;
+    padding: 1rem 0;
+    margin-bottom: 8%;
+  }
+
+  .skill_block ul {
+    margin-bottom: 2.5rem;
+  }
+
+  #projects {
+    margin-top: 28rem;
+  }
+
+  .img_container {
+    height: 400px;
+  }
+
+  #studio .img_container {
+    margin-top: -100px;
+  }
+
+  .project_info {
+    height: 400px;
+  }
+
+  .project_info h2 {
+    font-size: 2.5rem;
+  }
+
+  .project_info ul {
+    width: 40%;
+  }
+
+  .project_info p {
+    font-size: 1rem;
+  }
+
+  .project_info a {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 1000px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  #about_me {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28rem;
+  }
+
+  #job_title {
+    font-size: 3.5rem;
+  }
+
+  #skills {
+    display: flex;
+    flex-direction: column;
+    margin-top: 28rem;
+  }
+
+  .skill_block {
+    width: 47%;
+    padding: 1rem 0;
+  }
+
   footer ul {
     flex-direction: column-reverse;
     justify-content: center;
@@ -807,6 +649,252 @@ footer ul {
 
   footer ul p {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #job_title, #get_in_touch, #projects_title, #skills_title {
+    font-size: 3rem;
+  }
+
+  #description {
+    font-size: 1rem;
+  }
+
+  #social_media {
+    width: 25%;
+  }
+
+  #contact_form {
+    width: 90%;
+  }
+
+  #contact_form #name {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #about_me {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40rem;
+  }
+
+  #skills {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40rem;
+  }
+
+  .skill_block {
+    width: 65%;
+  }
+
+  #projects {
+    margin-top: 45rem;
+  }
+
+  .img_container {
+    margin-top: -2rem;
+  }
+
+  #studio .img_container {
+    margin-top: -100px;
+  }
+
+  .project_info {
+    margin-bottom: 55px;
+  }
+
+  .project_info h2 {
+    font-size: 3rem;
+  }
+
+  .project_info ul li {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #job_title, #get_in_touch, #projects_title, #skills_title {
+    font-size: 2.5rem;
+  }
+
+  #about_me {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40rem;
+  }
+
+  #skills {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40rem;
+  }
+
+  .skill_block {
+    width: 75%;
+  }
+
+  #projects {
+    margin-top: 45rem;
+  }
+
+  .img_container {
+    height: 300px;
+  }
+
+  #studio .img_container {
+    margin-top: -100px;
+  }
+
+  .project_info {
+    height: 300px;
+  }
+
+  .project_info h2 {
+    font-size: 2rem;
+  }
+
+  #studio .project_info ul {
+    width: 30%;
+  }
+
+  #ski .project_info ul {
+    width: 65%;
+  }
+
+  .project_info p {
+    font-size: 0.8rem;
+  }
+
+  .project_info a {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #description {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+
+  #social_media {
+    width: 30%;
+  }
+
+  #about_me {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48rem;
+  }
+
+  #skills {
+    display: flex;
+    flex-direction: column;
+    margin-top: 48rem;
+  }
+
+  .skill_block {
+    width: 95%;
+    margin-bottom: 35px;
+  }
+
+  .skill_block ul {
+    margin-bottom: 6rem;
+  }
+
+  #projects {
+    margin-top: 45rem;
+  }
+
+  .project_info {
+    height: 300px;
+  }
+
+  .project_info h2 {
+    font-size: 2rem;
+  }
+
+  #studio .project_info ul {
+    width: 40%;
+  }
+
+  #ski .project_info ul {
+    width: 80%;
+  }
+
+  #contact_form {
+    width: 90%;
+  }
+
+  #contact_form #name {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #job_title, #get_in_touch, #projects_title, #skills_title {
+    font-size: 1.8rem;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .skill_block {
+    margin-bottom: 35px;
+  }
+
+  .skill_block ul {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  #projects {
+    margin-top: 46rem;
+  }
+
+  #projects_title {
+    margin-bottom: 4rem;
+  }
+
+  #studio .project_info ul {
+    width: 50%;
+  }
+
+  #ski {
+    margin-top: 12rem;
+  }
+
+  #ski .project_info ul {
+    width: 100%;
+  }
+
+  .img_container {
+    height: 250px;
+  }
+
+  .project_info {
+    height: 250px;
+    margin-bottom: 200px;
+  }
+
+  .project_info h2 {
+    font-size: 1.5rem;
+  }
+
+  .project_info ul li {
+    font-size: 12px;
+  }
+
+  .project_info p {
+    font-size: 0.8rem;
+  }
+
+  .project_info a {
+    font-size: 0.8rem;
   }
   
 }
