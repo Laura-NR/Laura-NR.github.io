@@ -2,7 +2,6 @@
 const translations = {
     en: {
       navbar: {
-        home: "Home",
         skills: "Skills",
         projects: "Projects",
         contact: "Contact",
@@ -51,7 +50,6 @@ const translations = {
     },
     es: {
       navbar: {
-        home: "Inicio",
         skills: "Habilidades:",
         projects: "Proyectos",
         contact: "Contacto",
@@ -100,7 +98,6 @@ const translations = {
     },
     de: {
       navbar: {
-        home: "Startseite",
         skills: "Fähigkeiten:",
         projects: "Projekte",
         contact: "Kontakt",
@@ -149,7 +146,6 @@ const translations = {
     },
     fr: {
       navbar: {
-        home: "Accueil",
         skills: "Compétences :",
         projects: "Projets",
         contact: "Contact",
