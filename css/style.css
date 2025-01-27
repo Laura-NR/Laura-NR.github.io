@@ -160,13 +160,13 @@ header li:not(:first-child):focus {
   cursor: pointer;
 }
 
-.dropdown_item:hover {
+.dropdown_item:hover, .dropdown_item:focus {
   border: 1px solid white;
   transition: 0.3s ease-in-out;
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content, .dropdown:focus .dropdown-content {
   display: block;
 }
 
