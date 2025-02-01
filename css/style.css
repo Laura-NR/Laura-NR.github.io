@@ -1,3 +1,19 @@
+:root {
+  --bg-primary-color: #101736;
+  --bg-secondary-color: #210111;
+  --bg-third-color: #040404;
+  --white: #fff;
+  --black: #040404;
+}
+
+.light-mode {
+  --bg-primary-color: #FF6B6B;
+  --bg-secondary-color: #f78215;
+  --bg-third-color: #6fc0e1;
+  --white: #040404;
+  --black: #fff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,14 +23,13 @@
 
 body {
   min-height: 100vh;
-  background: rgb(16, 23, 54);
   background: linear-gradient(
     180deg,
-    rgb(4, 4, 4) 0%,
-    rgba(16, 23, 54, 1) 50%,
-    rgb(33, 1, 17) 100%
+    var(--bg-third-color) 0%,
+    var(--bg-primary-color) 50%,
+    var(--bg-secondary-color) 100%
   );
-  color: white;
+  color: var(--white);
   font-family: "kind_sansthin", sans-serif;
   font-size: 1rem;
   overflow-x: hidden;
@@ -43,7 +58,7 @@ body {
 }
 
 header ul {
-  width: 90%;
+  width: 88%;
   height: 70px;
   list-style-type: none;
   display: flex;
@@ -64,7 +79,7 @@ header li {
 header a {
   height: 100%;
   /* padding: 0 20px; */
-  color: white;
+  color: var(--white);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -84,7 +99,7 @@ header nav li:first-child {
 header li:not(:first-child):hover,
 header li:not(:first-child):active,
 header li:not(:first-child):focus {
-  border: 1px solid white;
+  border: 1px solid var(--white);
   transition: 0.3s ease-in-out;
 }
 
@@ -95,7 +110,7 @@ header li:not(:first-child):focus {
   height: 100vh;
   width: 250px;
   z-index: 999;
-  background-color: rgba(16, 23, 54, 0.1);
+  background-color: #1017361a;
   box-shadow: -5px 0 5px 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   display: none;
@@ -128,7 +143,7 @@ header li:not(:first-child):focus {
 /* Dropdown Button */
 .dropbtn {
   background-color: transparent;
-  color: white;
+  color: var(--white);
   border: none;
   cursor: pointer;
   display: flex;
@@ -144,7 +159,7 @@ header li:not(:first-child):focus {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -1.5rem;
   text-align: left;
   min-width: 150px;
   z-index: 1;
@@ -155,13 +170,13 @@ header li:not(:first-child):focus {
 
 /* Dropdown Items */
 .dropdown-content li {
-  color: white;
+  color: var(--white);
   /* padding: 12px 16px; */
   cursor: pointer;
 }
 
 .dropdown_item:hover, .dropdown_item:focus {
-  border: 1px solid white;
+  border: 1px solid var(--white); 
   transition: 0.3s ease-in-out;
 }
 
@@ -171,6 +186,9 @@ header li:not(:first-child):focus {
 }
 
 /* Responsive Adjustments for Sidebar */
+#showSideBarButton svg {
+  stroke: var(--white);
+}
 .sidebar .dropdown {
   width: 100%;
 }
@@ -189,6 +207,98 @@ header li:not(:first-child):focus {
   top: 100%;
   left: 0;
 }
+
+/********** Light Bulb Animation **********/
+.lightbulb-container {
+  position: fixed;
+  top: 0;
+  left: 95%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: wobble 4s ease-in-out infinite; /* Added wobble animation */
+  transform-origin: top;
+}
+
+.cord {
+  width: 0.8px;
+  height: 80px;
+  margin: 3px 0;
+  background-color: var(--white);
+  transition: height 0.2s ease-out;
+}
+
+/* Toggle icon (Sun/Moon) */
+.toggle-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 5px rgba(255, 204, 112, 0.7));
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s ease-out;
+  cursor: grab;
+}
+
+/* Light Mode Adjustments */
+.light-mode .toggle-icon {
+  /* background-color: #fff; */
+  filter: drop-shadow(0 0 8px rgba(255, 221, 112, 0.8));
+}
+
+/* Glow effect when switching */
+.glow {
+  animation: glowEffect 0.5s ease-out;
+}
+
+@keyframes glowEffect {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 204, 112, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 204, 112, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 204, 112, 0.7));
+  }
+}
+
+/* Wobble Effect for the Cord */
+@keyframes wobble {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px); /* Move to the left */
+  }
+  50% {
+    transform: translateX(5px);  /* Move to the right */
+  }
+  75% {
+    transform: translateX(-3px); /* Move a little to the left */
+  }
+  100% {
+    transform: translateX(0); /* Back to center */
+  }
+}
+
+/* Wobble effect */
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wobble {
+  animation: wobble 0.4s ease-in-out;
+}
+
+/********** Main Section **********/
 
 section {
   display: flex;
@@ -212,7 +322,7 @@ section {
 }
 
 #description {
-  color: #fff;
+  color: var(--white);
   font-size: 1.2rem;
   line-height: 1.5;
   margin: 1rem 0;
@@ -226,6 +336,10 @@ section {
   list-style-type: none;
   width: 15%;
   margin: 1rem 0;
+}
+
+#social_media svg {
+  fill: var(--white);
 }
 
 canvas {
@@ -266,8 +380,8 @@ canvas {
 .skill_block {
   background: linear-gradient(
     180deg,
-    rgba(16, 23, 54, 1) 0%,
-    rgb(33, 1, 17) 100%
+    var(--bg-primary-color) 0%,
+    var(--bg-secondary-color) 100%
   );
   opacity: 1;
   width: 25%;
@@ -278,8 +392,12 @@ canvas {
   align-items: center;
   line-height: 3rem;
   border-radius: 30px;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   position: relative;
+}
+
+.skill_block svg {
+  fill: var(--white);
 }
 
 .skill_block:hover,
@@ -376,7 +494,7 @@ canvas {
   font-family: "loyal_sansregularv1", sans-serif;
   font-weight: 700;
   cursor: pointer;
-  border: 1px solid white;
+  border: 1px solid var(--white);
   border-radius: 30px;
   padding: 3px 20px;
 }
@@ -393,10 +511,10 @@ canvas {
   margin: 1rem 0;
   padding: 0.5rem 1.2rem;
   font-weight: 700;
-  border: 1px solid white;
+  border: 1px solid var(--white);
   border-radius: 5px;
   background-color: transparent;
-  color: white;
+  color: var(--white);
   cursor: pointer;
   align-items: center;
   gap: 0.5rem;
@@ -404,8 +522,8 @@ canvas {
 }
 
 .project_info a:hover, .project_info ul li:hover {
-  background-color: white;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   transition: 0.3s ease-in-out;
 }
 
@@ -444,14 +562,14 @@ canvas {
   width: 100%;
   margin: 0.5rem 0;
   padding: 0.5rem;
-  border: 1px solid white;
+  border: 1px solid var(--white);
   border-radius: 5px;
   background-color: transparent;
-  color: white;
+  color: var(--white);
 }
 
 #contact_form input::placeholder, textarea::placeholder {
-  color: white;
+  color: var(--white);
 }
 
 #contact_form textarea {
@@ -459,10 +577,10 @@ canvas {
   height: 40%;
   margin: 0.5rem 0;
   padding: 0.5rem;
-  border: 1px solid white;
+  border: 1px solid var(--white);
   border-radius: 5px;
   background-color: transparent;
-  color: white;
+  color: var(--white);
 }
 
 #contact_form button {
@@ -470,10 +588,10 @@ canvas {
   margin: 1rem 0;
   padding: 0.5rem 1.2rem;
   font-weight: 500;
-  border: 1px solid white;
+  border: 1px solid var(--white);;
   border-radius: 5px;
   background-color: transparent;
-  color: white;
+  color: var(--white);
   cursor: pointer;
   align-items: center;
   gap: 0.5rem;
@@ -482,13 +600,13 @@ canvas {
 #contact_form button:hover,
 #contact_form button:active,
 #contact_form button:focus {
-  background-color: white;
-  color: black;
+  background-color: var(--white);;
+  color: var(--black);
   transition: 0.3s ease-in-out;
 }
 
 #contact_form button:hover svg path {
-  fill: black;
+  fill: var(--black);
 }
 
 footer ul {
@@ -501,7 +619,11 @@ footer ul {
   align-items: center;
   padding: 0;
   margin: 0 auto;
-  border-top: 1.5px solid white;
+  border-top: 1.5px solid var(--white);
+}
+
+footer svg {
+  fill: var(--white);
 }
 
 /**

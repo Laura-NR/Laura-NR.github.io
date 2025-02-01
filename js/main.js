@@ -329,3 +329,85 @@ document
       }
     );
   });
+
+
+  const toggleIcon = document.getElementById("toggleIcon");
+const cord = document.getElementById("cord");
+const body = document.body;
+let isDragging = false;
+
+// Set initial icon based on stored theme
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-mode");
+  toggleIcon.textContent = "🌙"; // Moon for light mode
+} else {
+  toggleIcon.textContent = "🌞"; // Sun for dark mode
+}
+
+toggleIcon.addEventListener("mousedown", startDrag);
+toggleIcon.addEventListener("touchstart", startDrag);
+
+function startDrag(event) {
+  isDragging = true;
+  document.addEventListener("mousemove", drag);
+  document.addEventListener("touchmove", drag);
+  document.addEventListener("mouseup", stopDrag);
+  document.addEventListener("touchend", stopDrag);
+}
+
+function drag(event) {
+  if (!isDragging) return;
+
+  let moveY = event.touches ? event.touches[0].clientY : event.clientY;
+  let maxPull = 80; // Max pull distance
+  let pullDistance = Math.min(moveY - 50, maxPull);
+
+  // Move icon
+  toggleIcon.style.transform = `translateY(${pullDistance}px)`;
+
+  // Slightly stretch the cord
+  cord.style.height = `${80 + pullDistance}px`;
+}
+
+function stopDrag() {
+  if (!isDragging) return;
+
+  isDragging = false;
+  document.removeEventListener("mousemove", drag);
+  document.removeEventListener("touchmove", drag);
+  document.removeEventListener("mouseup", stopDrag);
+  document.removeEventListener("touchend", stopDrag);
+
+  // Toggle light mode
+  body.classList.toggle("light-mode");
+
+  // Change icon
+  if (body.classList.contains("light-mode")) {
+    toggleIcon.textContent = "🌙"; // Moon for light mode
+    localStorage.setItem("theme", "light");
+  } else {
+    toggleIcon.textContent = "🌞"; // Sun for dark mode
+    localStorage.setItem("theme", "dark");
+  }
+
+  // Snap the icon back up
+  toggleIcon.style.transition = "transform 0.3s ease-out";
+  toggleIcon.style.transform = "translateY(0)";
+  
+  // Reset cord height
+  cord.style.transition = "height 0.3s ease-out";
+  cord.style.height = "80px";
+
+  // Add glow effect
+  toggleIcon.classList.add("glow");
+  setTimeout(() => {
+    toggleIcon.classList.remove("glow");
+  }, 500);
+
+  // Add wobble effect
+  toggleIcon.classList.add("wobble");
+  setTimeout(() => {
+    toggleIcon.classList.remove("wobble");
+  }, 400);
+}
+
